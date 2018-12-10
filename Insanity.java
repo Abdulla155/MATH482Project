@@ -1,7 +1,7 @@
 /*
 * Abdulla Binissa
 * 12/06/2018 - 5:00PM -
-* 12/10/2018 - 9:30PM - 2:00AM
+* 12/10/2018 - 9:30PM - 3:00AM
 *
 */
 
@@ -100,14 +100,54 @@ public class Cubes
   }
 
   //Methods
-  private void fsAdd()
+  private boolean nodeConflict(int i, int j, int s)
   {
-      
+
+  }
+
+  private void addNode(int i, int j, int s)
+  {
+
+  }
+
+  private void popNode(int s)
+  {
+
+  }
+
+  private int lastNodePositionAtJ(int s)
+  {
+
   }
 
   public boolean findSolution()
   {
-
+    int j = 0;
+    for (int s = 0; s < 2; s += 1)
+    {
+      for (int i = 0; i < cubes.size(); i += 1)
+      {
+        if( j <= 2 && i >= 0 ) // j <= 2
+        {
+          if( !nodeConflict(i,j,s) );
+          {
+            addNode(i,j,s);
+            j = 0;
+          }
+          else
+          {
+            j += 1;
+            i -= 1;
+          }
+        }
+        else
+        {
+          popNode(s);
+          i -= 2;
+          j = lastNodePositionAtJ(s) + 1;
+        }
+      }
+    }
   }
 
   public void sort()
