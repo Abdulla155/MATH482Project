@@ -41,12 +41,12 @@ public class Cubes
         for(int j = 0; j < 26; j+=1)
         {
           n = j*6;
-          a = 1 + ((Math.floor((n+0)*Math.pi) % 26));
-          b = 1 + ((Math.floor((n+1)*Math.pi) % 26));
-          c = 1 + ((Math.floor((n+2)*Math.pi) % 26));
-          d = 1 + ((Math.floor((n+3)*Math.pi) % 26));
-          e = 1 + ((Math.floor((n+4)*Math.pi) % 26));
-          f = 1 + ((Math.floor((n+5)*Math.pi) % 26));
+          a = 1 + ((int)(Math.floor((n+0)*Math.PI) % 26));
+          b = 1 + ((int)(Math.floor((n+1)*Math.PI) % 26));
+          c = 1 + ((int)(Math.floor((n+2)*Math.PI) % 26));
+          d = 1 + ((int)(Math.floor((n+3)*Math.PI) % 26));
+          e = 1 + ((int)(Math.floor((n+4)*Math.PI) % 26));
+          f = 1 + ((int)(Math.floor((n+5)*Math.PI) % 26));
           temp = new Cube(a,b,c,d,e,f);
           cubes.add(temp);
         }
@@ -55,12 +55,12 @@ public class Cubes
         for(int j = 0; j < 26; j+=1)
         {
           n = j*6;
-          a = 1 + ((Math.floor((n+0)*Math.e) % 26));
-          b = 1 + ((Math.floor((n+1)*Math.e) % 26));
-          c = 1 + ((Math.floor((n+2)*Math.e) % 26));
-          d = 1 + ((Math.floor((n+3)*Math.e) % 26));
-          e = 1 + ((Math.floor((n+4)*Math.e) % 26));
-          f = 1 + ((Math.floor((n+5)*Math.e) % 26));
+          a = 1 + ((int)(Math.floor((n+0)*Math.E) % 26));
+          b = 1 + ((int)(Math.floor((n+1)*Math.E) % 26));
+          c = 1 + ((int)(Math.floor((n+2)*Math.E) % 26));
+          d = 1 + ((int)(Math.floor((n+3)*Math.E) % 26));
+          e = 1 + ((int)(Math.floor((n+4)*Math.E) % 26));
+          f = 1 + ((int)(Math.floor((n+5)*Math.E) % 26));
           temp = new Cube(a,b,c,d,e,f);
           cubes.add(temp);
         }
@@ -69,12 +69,12 @@ public class Cubes
         for(int j = 0; j < 26; j+=1)
         {
           n = j*6;
-          a = 1 + ((Math.floor((n+0)*Math.sqrt(3)) % 26));
-          b = 1 + ((Math.floor((n+1)*Math.sqrt(3)) % 26));
-          c = 1 + ((Math.floor((n+2)*Math.sqrt(3)) % 26));
-          d = 1 + ((Math.floor((n+3)*Math.sqrt(3)) % 26));
-          e = 1 + ((Math.floor((n+4)*Math.sqrt(3)) % 26));
-          f = 1 + ((Math.floor((n+5)*Math.sqrt(3)) % 26));
+          a = 1 + ((int)(Math.floor((n+0)*Math.sqrt(3)) % 26));
+          b = 1 + ((int)(Math.floor((n+1)*Math.sqrt(3)) % 26));
+          c = 1 + ((int)(Math.floor((n+2)*Math.sqrt(3)) % 26));
+          d = 1 + ((int)(Math.floor((n+3)*Math.sqrt(3)) % 26));
+          e = 1 + ((int)(Math.floor((n+4)*Math.sqrt(3)) % 26));
+          f = 1 + ((int)(Math.floor((n+5)*Math.sqrt(3)) % 26));
           temp = new Cube(a,b,c,d,e,f);
           cubes.add(temp);
         }
@@ -83,12 +83,12 @@ public class Cubes
         for(int j = 0; j < 26; j+=1)
         {
           n = j*6;
-          a = 1 + ((Math.floor((n+0)*Math.sqrt(5)) % 26));
-          b = 1 + ((Math.floor((n+1)*Math.sqrt(5)) % 26));
-          c = 1 + ((Math.floor((n+2)*Math.sqrt(5)) % 26));
-          d = 1 + ((Math.floor((n+3)*Math.sqrt(5)) % 26));
-          e = 1 + ((Math.floor((n+4)*Math.sqrt(5)) % 26));
-          f = 1 + ((Math.floor((n+5)*Math.sqrt(5)) % 26));
+          a = 1 + ((int)(Math.floor((n+0)*Math.sqrt(5)) % 26));
+          b = 1 + ((int)(Math.floor((n+1)*Math.sqrt(5)) % 26));
+          c = 1 + ((int)(Math.floor((n+2)*Math.sqrt(5)) % 26));
+          d = 1 + ((int)(Math.floor((n+3)*Math.sqrt(5)) % 26));
+          e = 1 + ((int)(Math.floor((n+4)*Math.sqrt(5)) % 26));
+          f = 1 + ((int)(Math.floor((n+5)*Math.sqrt(5)) % 26));
           temp = new Cube(a,b,c,d,e,f);
           cubes.add(temp);
         }
@@ -100,7 +100,10 @@ public class Cubes
   }
 
   //Methods
-  private void fsAdd();
+  private void fsAdd()
+  {
+      
+  }
 
   public boolean findSolution()
   {
@@ -119,12 +122,12 @@ public class Cubes
 
   public int size()
   {
-    cubes.size();
+    return cubes.size();
   }
 
   public Cube get(int i)
   {
-    cubes.get(i);
+    return cubes.get(i);
   }
 
   public void add(int i, Cube c)
@@ -140,7 +143,7 @@ public class Insanity
   {
     Cubes ogCubes = new Cubes(0); // first cube puzzle
     Cubes myCubes = ogCubes;
-    ArrayList<int> minObstacle;
+    ArrayList<Integer> minObstacle = new ArrayList<Integer>();
     int i = myCubes.size() - 1;
 
     myCubes.sort(); //Sorts cubes of average colors
@@ -192,7 +195,7 @@ public class Insanity
 
   }
 
-  public void printMinObstacle(ArrayList<int> arr)
+  public static void printMinObstacle(ArrayList<Integer> arr)
   {
     for( int a : arr)
     {
