@@ -20,6 +20,14 @@ public class Cube
     faces[4] = e;
     faces[5] = f;
   }
+  
+  @Override
+  public String toString()
+  {
+    return String.format("%d-%d %d-%d %d-%d", 
+            faces[0], faces[1], faces[2], faces[3], faces[4], faces[5]);
+  }
+  
 }
 
 public class Cubes
@@ -97,6 +105,7 @@ public class Cubes
         System.out.println("Error 101");
         break;
     }
+    
   }
 
   //Methods
@@ -129,7 +138,7 @@ public class Cubes
       {
         if( j <= 2 && i >= 0 ) // j <= 2
         {
-          if( !nodeConflict(i,j,s) );
+          if( !nodeConflict(i,j,s) )
           {
             addNode(i,j,s);
             j = 0;
@@ -148,6 +157,7 @@ public class Cubes
         }
       }
     }
+    return true;
   }
 
   public void sort()
@@ -175,6 +185,18 @@ public class Cubes
     cubes.add(i, c);
   }
 
+  
+  @Override
+  public String toString()
+  {
+    String result = "";
+    for(Cube cube : cubes)
+    {
+      result += cube.toString() + "\n";
+    }
+    return result;
+  }
+  
 }
 
 public class Insanity
