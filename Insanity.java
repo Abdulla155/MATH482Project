@@ -13,7 +13,10 @@ public class Insanity
 {
   public static void main(String[] args)
   {
-    Cubes ogCubes = new Cubes(4); // first cube puzzle
+    int arrayCase = 4;
+    if(args.length > 0) arrayCase = Integer.parseInt(args[0]);
+
+    Cubes ogCubes = new Cubes(arrayCase); // first cube puzzle
     Cubes myCubes = ogCubes;
     ArrayList<Integer> minObstacle = new ArrayList<Integer>();
     int i = myCubes.size() - 1;
